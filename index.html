@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <mata name="viewpoint" content="width=device-width", initial-scale="1.0"/>
+        <link
+          href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+          rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css"/>
+        <title>Dessert prediction wed | สรุปได้ยังว่าจะกินขนมอะไร</title>
+
+    </head>
+    <body>
+        <header class="header">
+            <nav>
+                <div class="nav__header">
+
+                    <div class="nav__menu__btn" id="menu-btn">
+                        <i class="ri-menu-line"></i>
+                    </div>
+                </div>
+                <ul class="nav__links" id="nav-links">
+                    <li><a href="#home">HOME</a></li>
+
+                </ul>
+            </nav>
+            <div class="section__container header__container" id="home">
+                <div class="header__image">
+                    <img src="assest/header.png" alt="header" height="500" width="490">
+                </div>
+                <div class="header__content">
+                    <h2> อยากรับประทานหลายอย่าง เลือกไม่ถูกใช่หรือไม่ ทางเราเลือกให้คุณได้ถ้าคุณต้องการ</h2>
+                    <h1>DESSERT<br /><span>TIME</span></h1>
+                </div>
+            </div>
+
+        </header>
+        <section class="section__container banner__container" id="special">
+            <div class="banner__card">
+                <p>HOW TO USE</p>
+                <h4> 1 เลือกวัตถุดิบที่คุณอยากรับประทานในขนมสิ่งนั้น</h4>
+            </div>
+
+            <div class="banner__card">
+                <p>HOW TO USE</p>
+                <h4>2 กด MENU NOW เพื่อเปิดหน้าต่างสุ่มและระบบจะทำการสุ่มให้คุณ</h4>
+            </div>
+
+            <div class="banner__card">
+                <p>HOW TO USE</p>
+                <h4>3 เข้าDeliveryสั่ง ENJOY!</h4>
+            </div>
+        </section>
+
+        <section class="section__container order__container" id="menu">
+            <h3>วัตถุดิบคุ้นเคย</h3>
+            <h2 class="section__header">RAW MATERIAL</h2>
+            <p class="section__description">
+               วัตถุดิบที่ถูกใช้บ่อยในขนมไม่ว่าจะไทยหรือต่างประเทศ
+            </p>
+            <div class="order__grid">
+                <div class="order__card">
+                    <img src="assest/นม.jpg" alt="order">
+                    <h4>MILK</h4>
+                    <p>
+                        แหล่งโปรตีนและแคลเซียมที่สำคัญ ยังเป็นส่วนผสมหลักที่ช่วยสร้างรสชาติและเนื้อสัมผัสที่หลากหลายให้กับขนม รสสัมผัสของนมในขนมแต่ละชนิดนั้นแตกต่างกันไป ขึ้นอยู่กับ ประเภทของนม 
+                    </p>
+                    <button class="btn" onclick="randomDessert('MILK')">MENU NOW</button>
+
+                    
+                </div>
+
+                <div class="order__card">
+                    <img src="assest/rice.jpg" alt="order">
+                    <h4>RICE</h4>
+                    <p>
+                        ข้าวเป็นอาหารหลักของคนทั่วโลก และแต่ละชนิดก็มีรสชาติและเนื้อสัมผัสที่แตกต่างกันออกไป การบรรยายรสชาติของข้าวจึงเป็นเหมือนการเปิดประตูสู่โลกของรสสัมผัสที่หลากหลาย 
+                    </p>
+                    <button class="btn" onclick="randomDessert('RICE')">MENU NOW</button>
+                </div>
+
+                <div class="order__card">
+                    <img src="assest/ช้อก.jpg" alt="order">
+                    <h4>CHOCOLAT</h4>
+                    <p>
+                        วัตถุดิบที่สร้างสรรค์รสชาติและสัมผัสที่หลากหลายได้อย่างไม่น่าเชื่อ การบรรยายรสชาติของช็อกโกแลตจึงเป็นเหมือนการเปิดประตูสู่โลกแห่งความรู้สึกที่แตกต่างกันไป
+                    </p>
+                    <button class="btn" onclick="randomDessert('CHOCOLAT')">MENU NOW</button>
+                </div>
+
+            </div>
+
+        </section>
+
+        <script>
+            const desserts = {
+                MILK: ["วุ้นนมสด", "พุดดิ้ง", "บัวลอย", "ขนมปังนมสด", "กล้วยทับนมสด", "ชีสเค้ก", "ไอศกรีม", "พานาคอตต้า", "ครีมบรูเล่"],
+                RICE: ["ข้าวเหนียวมะม่วง", "ข้าวตังหน้าตั้ง", "ข้าวเม่า", "ขนมบ้าบิ่น", "กล้วยทับนมสด", "เค้กข้าว", "ขนมตาล", "โมจิ", "ข้าวเหนียวสังขยา"],
+                CHOCOLAT: ["บราวนี่", "บราวนี่ชีสเค้ก", "กล้วยช็อกโกแลต", "ช็อกโกแลตฟองดูว์", "มูสช็อกโกแลต", "มาการองช็อกโกแลต", "ช็อกโกแลตครีม", "คุ้กกี้ช็อกโกแลตชิป", "ไอศกรีมช็อกโกแลต"],
+            }
+            function randomDessert(ingredient) {
+                const dessertArray = desserts[ingredient];
+                const randomDessert = dessertArray[Math.floor(Math.random() * dessertArray.length)];
+                const newWindow = window.open("", "_blank");
+                newWindow.document.write(`
+                    <html>
+                        <head>
+                            <title>ผลลัพธ์ขนม</title>
+                            <style>
+                                body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+                            </style>
+                        </head>
+                        <body>
+                            <h2>สุ่มได้ขนม:</h2>
+                            <p>${randomDessert}</p>
+                            <button onclick="window.close()">ปิด</button>
+                        </body>
+                    </html>
+                `);
+                newWindow.document.close();
+            }
+        </script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
